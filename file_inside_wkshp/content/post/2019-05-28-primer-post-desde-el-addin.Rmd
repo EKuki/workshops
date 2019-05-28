@@ -16,3 +16,36 @@ image:
   preview_only: no
 projects: []
 ---
+
+
+Un poco de Rmarkdown para ver que pasa
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+knitr::knit_hooks$set(error = function(x, options) {
+  paste0("<pre style=\"color: red;\"><code>", x, "</code></pre>")
+})
+```
+
+To understand how R works, you are going to use it as a simple calcuator.
+You can get output in the Console simply by typing math in the script and running it:
+```{r three-plus-five, echo=TRUE}
+3+5 # From the pound sign to the right, this is a comment. I am asking R to sum 3 plus 5
+```
+  
+Now, we divide 12 by 6 and write a comment explaining what we are doing
+```{r calculator-ex-solution}
+12/6 # I am now dividing 12 by 6. The solution is 2
+```
+
+
+# 1.Basics R
+
+## First steps
+To write a comment, type `#` before the sentence you want to write.
+Anything to the right of a `#` in a script will be ignored by R.
+To run any line (or lines), click anywhere on the line you want to run and either 1) click `Ctr` + `Enter` or 2) click on the run bottom (up right corner of Source/Script in Rstudio)
+<div id="print-weight-hint">
+**Hint:** If you want to run several lines, highlight them all and do as explained above.
+</div>  
