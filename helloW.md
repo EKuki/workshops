@@ -2,16 +2,10 @@
 title: "Hello"
 output: 
   html_document: 
-    keep_md: true
+    keep_md: yes
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 
-knitr::knit_hooks$set(error = function(x, options) {
-  paste0("<pre style=\"color: red;\"><code>", x, "</code></pre>")
-})
-```
 
 
 # 1.Basics R
@@ -27,19 +21,30 @@ To run any line (or lines), click anywhere on the line you want to run and eithe
 
 To understand how R works, you are going to use it as a simple calcuator.
 You can get output in the Console simply by typing math in the script and running it:
-```{r three-plus-five, echo=TRUE}
+
+```r
 3+5 # From the pound sign to the right, this is a comment. I am asking R to sum 3 plus 5
+```
+
+```
+## [1] 8
 ```
   
 Now, we divide 12 by 6 and write a comment explaining what we are doing
-```{r calculator-ex-solution}
+
+```r
 12/6 # I am now dividing 12 by 6. The solution is 2
+```
+
+```
+## [1] 2
 ```
 
 ## Assign values to objects
 `<-` assigns the values on the right to objects on the left.
 If we write `weight_kg <- 55`, R won't print anything, but it creates an object called `weight_kg` with an asigned value of 55. In Rstudio, you can see this new object in the Environment window. Try it on the console:
-```{r print-weight-solution}
+
+```r
 weight_kg <- 55
 ```
 <div id="print-weight-hint">
@@ -47,22 +52,44 @@ weight_kg <- 55
 </div>  
 
 Putting parenthesis around the call prints the value of `weight_kg` automatically, as so does typing directly the name of the object (once it as been created/asigned), and running that line. Try typing `(weight_kg <- 55)` and  `weight_kg`.
-```{r print-weight-parenth-solution}
+
+```r
 (weight_kg <- 55)
+```
+
+```
+## [1] 55
+```
+
+```r
 weight_kg 
 ```
 
+```
+## [1] 55
+```
+
 **R iS cAsE SeNsItIvE!!** What happens if you try to call `weight_KG` (note the capitalization in KG)?
-```{r error-weight-ex, error = TRUE}
+
+```r
 weight_KG
 ```
 
+<pre style="color: red;"><code>## Error in eval(expr, envir, enclos): object 'weight_KG' not found
+</code></pre>
+
 
 In R, you can overwrite an object, so *be careful*! For example, run the following line of code and then call `weight_kg`.
-```{r print-weight60-ex}
+
+```r
 weight_kg <- 60
 ```
-```{r print-weight60-ex-solution}
+
+```r
 weight_kg # The value of `weight` is now 60, not 55!
+```
+
+```
+## [1] 60
 ```
 
