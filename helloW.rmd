@@ -3,26 +3,40 @@ title: "Hello"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# 1.Basics R
+
+## First steps
+To write a comment, type `#` before the sentence you want to write.
+Anything to the right of a `#` in a script will be ignored by R.
+To run any line (or lines), click anywhere on the line you want to run and either 1) click `Ctr` + `Enter` or 2) click on the run bottom (up right corner of Source/Script in Rstudio)
+<div id="print-weight-hint">
+**Hint:** If you want to run several lines, highlight them all and do as explained above.
+</div>  
+<div style="line-height: 2em;"> "" </div>
+
+To understand how R works, you are going to use it as a simple calcuator.
+You can get output in the Console simply by typing math in the script and running it:
+```{r three-plus-five, echo=TRUE}
+3+5 # From the pound sign to the right, this is a comment. I am asking R to sum 3 plus 5
+```
+  
+Now, we divide 12 by 6 and write a comment explaining what we are doing
+```{r calculator-ex-solution}
+12/6 # I am now dividing 12 by 6. The solution is 2
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+## Assign values to objects
+`<-` assigns the values on the right to objects on the left.
+If we write `weight_kg <- 55`, R won't print anything, but it creates an object called `weight_kg` with an asigned value of 55. In Rstudio, you can see this new object in the Environment window. Try it on the console:
+```{r print-weight-solution}
+weight_kg <- 55
 ```
+<div id="print-weight-hint">
+**Hint:** For a shortcut of `<-`, Type `Alt` + `-` at the same time (for PC), or `Option` + `-` (for Mac).
+</div>  
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+Putting parenthesis around the call prints the value of `weight_kg` automatically, as so does typing directly the name of the object (once it as been created/asigned), and running that line. Try typing `(weight_kg <- 55)` and  `weight_kg`.
+```{r print-weight-parenth-solution}
+(weight_kg <- 55)
+weight_kg 
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
