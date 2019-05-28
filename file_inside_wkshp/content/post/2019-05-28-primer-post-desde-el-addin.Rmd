@@ -1,0 +1,18 @@
+---
+title: Primer post desde el addin
+author: EK
+date: '2019-05-28'
+slug: primer-post-desde-el-addin
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2019-05-28T15:54:48-07:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
