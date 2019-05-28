@@ -3,6 +3,15 @@ title: "Hello"
 output: html_document
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+knitr::knit_hooks$set(error = function(x, options) {
+  paste0("<pre style=\"color: red;\"><code>", x, "</code></pre>")
+})
+```
+
+
 # 1.Basics R
 
 ## First steps
@@ -12,7 +21,7 @@ To run any line (or lines), click anywhere on the line you want to run and eithe
 <div id="print-weight-hint">
 **Hint:** If you want to run several lines, highlight them all and do as explained above.
 </div>  
-<div style="line-height: 2em;"> "" </div>
+
 
 To understand how R works, you are going to use it as a simple calcuator.
 You can get output in the Console simply by typing math in the script and running it:
@@ -40,3 +49,18 @@ Putting parenthesis around the call prints the value of `weight_kg` automaticall
 (weight_kg <- 55)
 weight_kg 
 ```
+
+**R iS cAsE SeNsItIvE!!** What happens if you try to call `weight_KG` (note the capitalization in KG)?
+```{r error-weight-ex, error = TRUE}
+weight_KG
+```
+
+
+In R, you can overwrite an object, so *be careful*! For example, run the following line of code and then call `weight_kg`.
+```{r print-weight60-ex}
+weight_kg <- 60
+```
+```{r print-weight60-ex-solution}
+weight_kg # The value of `weight` is now 60, not 55!
+```
+
