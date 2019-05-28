@@ -1,0 +1,70 @@
+---
+title: "Hello"
+output: 
+  rmarkdown::github_document:
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+knitr::knit_hooks$set(error = function(x, options) {
+  paste0("<pre style=\"color: red;\"><code>", x, "</code></pre>")
+})
+```
+
+
+# 1.Basics R
+
+## First steps
+To write a comment, type `#` before the sentence you want to write.
+Anything to the right of a `#` in a script will be ignored by R.
+To run any line (or lines), click anywhere on the line you want to run and either 1) click `Ctr` + `Enter` or 2) click on the run bottom (up right corner of Source/Script in Rstudio)
+<div id="print-weight-hint">
+**Hint:** If you want to run several lines, highlight them all and do as explained above.
+</div>  
+
+
+To understand how R works, you are going to use it as a simple calcuator.
+You can get output in the Console simply by typing math in the script and running it:
+```{r three-plus-five, echo=TRUE}
+3+5 # From the pound sign to the right, this is a comment. I am asking R to sum 3 plus 5
+```
+  
+Now, we divide 12 by 6 and write a comment explaining what we are doing
+```{r calculator-ex-solution}
+12/6 # I am now dividing 12 by 6. The solution is 2
+```
+
+## Assign values to objects
+`<-` assigns the values on the right to objects on the left.
+If we write `weight_kg <- 55`, R won't print anything, but it creates an object called `weight_kg` with an asigned value of 55. In Rstudio, you can see this new object in the Environment window. Try it on the console:
+```{r print-weight-solution}
+weight_kg <- 55
+```
+<div id="print-weight-hint">
+**Hint:** For a shortcut of `<-`, Type `Alt` + `-` at the same time (for PC), or `Option` + `-` (for Mac).
+</div>  
+
+Putting parenthesis around the call prints the value of `weight_kg` automatically, as so does typing directly the name of the object (once it as been created/asigned), and running that line. Try typing `(weight_kg <- 55)` and  `weight_kg`.
+```{r print-weight-parenth-solution}
+(weight_kg <- 55)
+weight_kg 
+```
+
+**R iS cAsE SeNsItIvE!!** What happens if you try to call `weight_KG` (note the capitalization in KG)?
+```{r error-weight-ex, error = TRUE}
+weight_KG
+```
+
+
+In R, you can overwrite an object, so *be careful*! For example, run the following line of code and then call `weight_kg`.
+```{r print-weight60-ex}
+weight_kg <- 60
+```
+```{r print-weight60-ex-solution}
+weight_kg # The value of `weight` is now 60, not 55!
+```
+
+
+
+
