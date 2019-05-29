@@ -64,3 +64,13 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   category = "categories"
   publication_type = "publication_types"
   author = "authors"
+
+# Netlify studd added my me
+[build]
+publish = "public"
+command = "hugo"
+
+[context.production.environment]
+HUGO_VERSION = "0.55.6"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
